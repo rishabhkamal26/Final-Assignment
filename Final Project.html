@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amritsari Chaap</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: #fff8f0;
+      color: #333;
+    }
+
+    header {
+      background: #1c930e;
+      color: rgb(11, 8, 8);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+    .hero {
+      background: url('https://source.unsplash.com/1600x600/?chaap,food') center/cover;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .menu, .about, .contact {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .menu-items {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .item {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .item span {
+      display: block;
+      margin-top: 10px;
+      color: #d32f2f;
+      font-weight: bold;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      background: #d32f2f;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #3ad32f;
+      color: rgba(1, 0, 0, 0.957);
+      text-align: center;
+      padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #d32f2f;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Amritsari Chaap</div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Welcome to Amritsari Chaap</h1>
+    <p>Delicious North Indian Flavours – Veg Treats Like Never Before!</p>
+  </section>
+
+  <section id="menu" class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="item">
+        <h3>Masala Chaap</h3>
+        <span>₹150</span>
+      </div>
+      <div class="item">
+        <h3>Afghani Chaap</h3>
+        <span>₹180</span>
+      </div>
+      <div class="item">
+        <h3>Stuffed Chaap</h3>
+        <span>₹200</span>
+      </div>
+      </div class="item">
+        <h3>Paneer Chaap</h3>
+        <span>₹220</span>
+      </div>
+      <div class="item">
+        <h3>Chaap Roll</h3>
+        <span>₹120</span>
+      </div>
+      <div class="item">
+        <h3>Chaap Biryani</h3>
+        <span>₹250</span>
+      </div>
+      <div class="item">
+        <h3>Chaap Tikka</h3>
+        <span>₹230</span>
+      </div>  
+      <div class="item">
+        <h3>Chaap Curry</h3>
+        <span>₹240</span>
+      <div class="item">
+        <h3>Chaap Sandwich</h3>
+        <span>₹160</span>
+      <div class="item">
+        <h3>Chaap Platter</h3>
+        <span>₹300</span>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>At Amritsari Chaap, we bring you the authentic taste of Punjab with a 100% vegetarian twist.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required/>
+      <input type="email" placeholder="Your Email" required/>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Amritsari Chaap. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('show');
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      alert('Thank you for contacting us!');
+    }
+  </script>
+</body>
+</html>
